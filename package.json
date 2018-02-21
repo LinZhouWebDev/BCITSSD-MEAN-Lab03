@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lin Zhou",
@@ -12,6 +13,7 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "ejs-locals": "^1.0.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "bower": "1.8.2"
   }
 }
