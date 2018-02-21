@@ -1,0 +1,10 @@
+<%- layout('layout.ejs') %>
+<table>
+    <tr><th>Province</th><th>Capital</th></tr>
+    <% capitals.forEach(function(capital) { %>
+    <tr>
+        <td><%= capital.province %></td>
+        <td><%= capital.capital %></td>
+    </tr>
+    <% }); %>  
+</table>

@@ -27,12 +27,19 @@ fs.readFile(
 });
 
 app.get('/api/countries', (req, res) => {
+    res.setHeader("Content-Type", "application/json");
     res.send(countriesRaw);
-})
+});
 
 app.get('/api/capitals', (req, res) => {
-    res.send(capitalsRaw);
-})
+    // res.setHeader("Content-Type", "application/json");
+    // res.send(capitalsRaw);
+    res.render("capitals", {title: "Capitals", capitals: capitalsRaw});
+});
+
+app.get('/', (req, res) => {
+    res.render("index", {title: "Express Lab"});
+});
 
 app.listen(port, function(err, res) {
     if (err) {
