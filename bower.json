@@ -1,0 +1,6 @@
+{
+    "name": "node demo",
+    "dependencies": {
+     "bootstrap": "3.3.7"
+    }
+}

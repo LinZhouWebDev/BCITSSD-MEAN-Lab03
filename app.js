@@ -1,4 +1,5 @@
 var fs = require("fs");
+var path = require('path');
 var express = require('express');
 var app = express();
 // View Engine
@@ -26,14 +27,19 @@ fs.readFile(
         countriesRaw = JSON.parse(data);
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/api/countries', (req, res) => {
     res.setHeader("Content-Type", "application/json");
     res.send(countriesRaw);
 });
 
 app.get('/api/capitals', (req, res) => {
-    // res.setHeader("Content-Type", "application/json");
-    // res.send(capitalsRaw);
+    res.setHeader("Content-Type", "application/json");
+    res.send(capitalsRaw);
+});
+
+app.get('/capitals', (req, res) => {
     res.render("capitals", {title: "Capitals", capitals: capitalsRaw});
 });
 
